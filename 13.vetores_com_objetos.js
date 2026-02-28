@@ -27,4 +27,11 @@ listadenomes.forEach( nome => console.log(`${nome}`))
 
 console.log("\nMostrando apenas nomes: ")
 const usuarioEncontrado = usuarios.find(u => u.nome === "Carla")
-console.log(`Nome: ${usuarioEncontrado.nome} \nidade:  ${usuarioEncontrado.idade} `)
+console.log(usuarioEncontrado)
+console.log(`Nome: ${usuarioEncontrado.nome} \nidade:  ${usuarioEncontrado.idade} `) 
+
+console.log("\nSoma as idades de todos os usuarios: ")
+//  total acumula a soma das idade 
+//  0 é o valor inicial contagem  
+const somaIdades = usuarios.reduce((total, u) => total + u.idade, 0)
+console.log(somaIdades)

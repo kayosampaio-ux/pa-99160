@@ -1,0 +1,64 @@
+/* Fundo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container destacado */
+.container {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+
+    /* Destaque */
+    border: 1px solid #2f2f2f;
+
+    /* sombra externa (profundidade) */
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.7),
+        0 0 20px rgba(0,0,0,0.4);
+
+    /* leve brilho interno */
+    backdrop-filter: blur(4px);
+}
+
+/* Título */
+h1 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* Células */
+td {
+    padding: 10px;
+    font-size: 18px;
+    color: #e4e4e4;
+    border-bottom: 1px solid #333;
+}
+
+/* Resultado */
+.resultado {
+    font-weight: bold;
+    color: #4da3ff;
+    text-align: right;
+}
+
+/* Zebra */
+tr:nth-child(even) {
+    background-color: #2a2a2a;
+}

@@ -1,15 +1,16 @@
 function gerartabuada() {
+
     // pegar o valor do input no Html.
-    const numeroinput = document.getElementById("numeroinput");
-    let numero = parseInt(numeroinput);
+    const numeroinput = document.getElementById("numeroInput");
+    let numero = parseInt(numeroinput.value);
 
     // pegar o elemento HTML onde a tabuada será exibida.
     const resultadoDiv = document.getElementById("resultadodatabuada");
     resultadoDiv.innerHTML = "";
 
     // verificar se a entrada é um numero válido
-    if (isNaN(numero) || numero === null || numero === "") {
-        resultadoDiv.innerHTML = "Por favor, digite um número...</p>";
+    if (isNaN(numero)) {
+        resultadoDiv.innerHTML = "Por favor, digite um número...";
         return;
     }
 
@@ -18,7 +19,9 @@ function gerartabuada() {
 
     // laço de repeticão para gerar a tabuada de 1 até 10.
     for(let i = 1; i <= 10; i++) {
-        let numero = parseInt(numeroinput.value);
+
+        let resultado = numero * i;
+
         resultadoDiv.innerHTML += `<p>${numero} x ${i} = ${resultado}</p>`;
     }
 

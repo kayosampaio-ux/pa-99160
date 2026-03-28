@@ -1,0 +1,16 @@
+// App.js
+import './App.css'
+import InfoAluno from './components/InfoAluno'
+import InfoCurso from './components/InfoCurso'
+
+function App() {
+  return (
+    <>
+      <h1>Bem-vindo ao meu projeto</h1>
+      <InfoAluno />
+      <InfoCurso />
+    </>
+  )
+}
+
+export default App

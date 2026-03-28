@@ -1,0 +1,75 @@
+/* Estilos gerais para o componente InfoAluno */
+.Info-aluno {
+    background-color: #1c1c1c;          /* Cor de fundo escura */
+    border-radius: 12px;                 /* Bordas arredondadas */
+    padding: 20px;                       /* Espaçamento interno */
+    max-width: 450px;                    /* Largura máxima */
+    margin: 20px auto;                   /* Centraliza na tela */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Sombra forte para o efeito 3D */
+    font-family: 'Roboto', sans-serif;    /* Fonte moderna */
+    color: #f1f1f1;                      /* Cor do texto clara */
+    position: relative;                  /* Para a linha colorida */
+    border-left: 6px solid #00bcd4;      /* Linha colorida no lado esquerdo */
+}
+
+/* Estilo para o título */
+.Info-aluno h2 {
+    font-size: 28px;                     /* Tamanho da fonte */
+    text-align: center;                  /* Centraliza o título */
+    color: #f1f1f1;                      /* Cor do título */
+    text-transform: uppercase;           /* Deixa o título em maiúsculas */
+    margin-bottom: 20px;                 /* Espaçamento abaixo do título */
+    letter-spacing: 2px;                 /* Aumenta o espaçamento entre as letras */
+}
+
+/* Estilo para os parágrafos de informações */
+.Info-aluno p {
+    font-size: 20px;                     /* Tamanho da fonte */
+    margin-bottom: 15px;                  /* Espaçamento entre os parágrafos */
+    color: #e0e0e0;                      /* Cor clara para o texto */
+}
+
+/* Estilos gerais para o componente InfoCurso */
+.InfoCurso {
+    background-color: #2a2a2a;           /* Cor de fundo escura */
+    border-radius: 12px;                  /* Bordas arredondadas */
+    padding: 20px;                        /* Espaçamento interno */
+    max-width: 450px;                     /* Largura máxima */
+    margin: 20px auto;                    /* Centraliza na tela */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Sombra forte para o efeito 3D */
+    font-family: 'Roboto', sans-serif;     /* Fonte moderna */
+    color: #f1f1f1;                       /* Cor do texto clara */
+    position: relative;                   /* Para a linha colorida */
+    border-left: 6px solid #ff6f00;       /* Linha colorida no lado esquerdo */
+}
+
+/* Estilo para o título do InfoCurso */
+.InfoCurso h2 {
+    font-size: 28px;                      /* Tamanho da fonte */
+    text-align: center;                   /* Centraliza o título */
+    color: #f1f1f1;                       /* Cor do título */
+    text-transform: uppercase;            /* Deixa o título em maiúsculas */
+    margin-bottom: 20px;                  /* Espaçamento abaixo do título */
+    letter-spacing: 2px;                  /* Aumenta o espaçamento entre as letras */
+}
+
+/* Estilo para os parágrafos de informações */
+.InfoCurso p {
+    font-size: 20px;                      /* Tamanho da fonte */
+    margin-bottom: 15px;                   /* Espaçamento entre os parágrafos */
+    color: #e0e0e0;                       /* Cor suave de texto */
+}
+
+/* Corpo da página */
+body {
+    background-color: #121212;           /* Fundo escuro */
+    color: #f1f1f1;                      /* Cor do texto clara */
+    font-family: 'Roboto', sans-serif;    /* Fonte moderna */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}

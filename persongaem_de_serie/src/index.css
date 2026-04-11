@@ -1,0 +1,276 @@
+/* Importando fonte padrão da Netflix (similar) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #141414; /* Preto Netflix */
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+.netflix-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+/* Header - CENTRALIZADO */
+.netflix-header {
+  width: 100%;
+  padding: 30px 0; 
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.netflix-logo {
+  height: 40px;
+}
+
+/* Container Principal */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+h1, h2 {
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 4vw; 
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+/* --- SEÇÃO DO FORMULÁRIO --- */
+.form-section {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 60px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 80px;
+}
+
+.netflix-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Input estilo Netflix (com label flutuante) */
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 20px;
+  padding-top: 24px;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.input-group input:focus {
+  background-color: #454545;
+}
+
+.input-group label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8c8c8c;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.netflix-button {
+  background-color: #E50914; /* Vermelho Netflix */
+  color: #fff;
+  border: none;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.netflix-button:hover {
+  background-color: #b9090b;
+}
+
+/* --- SEÇÃO DA LISTA (PERFIS) --- */
+.list-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-data {
+  color: #8c8c8c;
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* Grade de Perfis responsiva */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 3vw; 
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .profile-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card do Perfil */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+
+  /* APLICAÇÃO DO EFEITO DE SUAVIDADE (BÉZIER + GPU) */
+  /* Reverti para 0.4s e cubic-bezier para suavidade premium, sem mudar translateY */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform; /* Estabilidade e aceleração por hardware */
+}
+
+/* Efeito de Hover - DESIGN ORIGINAL MANTIDO */
+.profile-card:hover {
+  /* Reverti o tamanho para o 1.05 original e removi o translateY */
+  transform: scale(1.05); 
+}
+
+/* Wrapper da Imagem para o efeito de borda */
+.profile-avatar-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 150px;
+  aspect-ratio: 1 / 1; 
+  border-radius: 4px;
+  overflow: hidden;
+  border: 3px solid transparent; 
+  margin-bottom: 15px;
+
+  /* Aplicação da suavidade na borda também */
+  transition: border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-card:hover .profile-avatar-wrapper {
+  border-color: #fff; 
+}
+
+/* Nomes e Meta dados */
+.profile-name {
+  color: #8c8c8c;
+  font-size: 1.5vw;
+  margin-bottom: 5px;
+  display: block;
+  /* Suavidade na mudança de cor */
+  transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (max-width: 600px) {
+  .profile-name { font-size: 16px; }
+}
+
+.profile-card:hover .profile-name {
+  color: #fff; 
+}
+
+.profile-meta {
+  color: #666;
+  font-size: 12px;
+  font-weight: 300;
+  display: block;
+}
+
+.profile-actor {
+  color: #555;
+  font-size: 11px;
+  font-style: italic;
+  display: block;
+}
+
+/* Estilo do botão "Adicionar Perfil" */
+.add-profile .add-icon {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  color: #666;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.add-profile:hover .add-icon {
+  background-color: #fff;
+  color: #141414;
+  border-color: #fff;
+}
+
+/* Toque final: Overlay do Red John (O Mentalista) */
+.red-john-overlay {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  color: rgba(139, 0, 0, 0.7); 
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Crimson Text', serif; 
+  transform: rotate(90deg); 
+  pointer-events: none; 
+}

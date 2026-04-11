@@ -1,0 +1,30 @@
+<!-- cire um projeto com dados de um personagem de série. No site deve ter os campos para o usuário inserir os dados, após clicar no botao para salvar, os dados devem ser exibidos em uma lista -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagem de Série</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Cadastro de Personagem de Série</h1>
+    <div class="form-group">
+        <label for="name">Nome do Personagem:</label>
+        <input type="text" id="name" placeholder="Digite o nome do personagem">
+    </div>
+    <div class="form-group">
+        <label for="series">Série:</label>
+        <input type="text" id="series" placeholder="Digite o nome da série">
+    </div>
+    <div class="form-group">
+        <label for="description">Descrição:</label>
+        <input type="text" id="description" placeholder="Digite uma breve descrição do personagem">
+    </div>
+    <button onclick="saveCharacter()">Salvar Personagem</button>
+    <h2>Lista de Personagens</h2>
+    <ul id="characterList"></ul>
+</body>
+</html>

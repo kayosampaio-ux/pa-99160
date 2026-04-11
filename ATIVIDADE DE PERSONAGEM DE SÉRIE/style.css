@@ -1,0 +1,67 @@
+ body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {            background-color: #0056b3;
+        }
+        .character-list {
+            margin-top: 20px;
+        }
+        .character-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .character-item h3 {
+            margin: 0 0 10px 0;
+        }
+        .character-item p {
+            margin: 5px 0;
+        }
+        .character-item .actions {
+            margin-top: 10px;
+        }
+        .character-item .actions button {
+            margin-right: 5px;
+        }
+        .character-item .actions button.edit {
+            background-color: #28a745;
+        }
+        .character-item .actions button.edit:hover {
+            background-color: #218838;
+        }
+        .character-item .actions button.delete {
+            background-color: #dc3545;
+        }        .character-item .actions button.delete:hover {
+            background-color: #c82333;
+        }
+        .character-item .actions button.view {
+            background-color: #17a2b8;
+        }
+        .character-item .actions button.view:hover {            background-color: #138496;
+        }
+        .character-item .actions button.save {
+            background-color: #ffc107;
+        }
+        .character-item .actions button.save:hover {
+            background-color: #e0a800;
+        } 

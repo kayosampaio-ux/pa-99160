@@ -1,32 +1,38 @@
-function calcular(){
+function calcular() {
+    const resDiv = document.getElementById("resultado");
+    
+    // Efeito de "processando" no painel
+    resDiv.style.opacity = "0";
+    
+    setTimeout(() => {
+        let n1 = Number(document.getElementById("n1").value);
+        let n2 = Number(document.getElementById("n2").value);
 
-let n1 = Number(document.getElementById("n1").value);
-let n2 = Number(document.getElementById("n2").value);
+        let soma = n1 + n2;
+        let media = soma / 2;
+        let produto = n1 * n2;
+        let maior = Math.max(n1, n2);
+        let menor = Math.min(n1, n2);
 
-let soma = n1 + n2;
-let media = soma / 2;
-let produto = n1 * n2;
+        let mensagem = "";
 
-let maior = Math.max(n1,n2);
-let menor = Math.min(n1,n2);
+        if (soma === 22) {
+            mensagem = "<span class='special'>ALERTA: Capitão detectado 🫡</span>";
+        } 
+        else if (soma === 13) {
+            mensagem = "<span class='special'>ALERTA: Picanha liberada 🥩</span>";
+        } 
+        else {
+            mensagem = `
+                <div class="res-item"><span>SOMA:</span> ${soma}</div>
+                <div class="res-item"><span>MÉDIA:</span> ${media}</div>
+                <div class="res-item"><span>PRODUTO:</span> ${produto}</div>
+                <div class="res-item"><span>MAIOR:</span> ${maior}</div>
+                <div class="res-item"><span>MENOR:</span> ${menor}</div>
+            `;
+        }
 
-let mensagem = "";
-
-if (soma === 22){
-    mensagem = "Resultado especial: Capitão Bolsonaro";
-} 
-else if (soma === 13){
-    mensagem = "Resultado especial: Papai Lula da picanha";
-} 
-else{
-    mensagem = `
-    Soma: ${soma} <br>
-    Média: ${media} <br>
-    Produto: ${produto} <br>
-    Maior número: ${maior} <br>
-    Menor número: ${menor}`;
-}
-
-document.getElementById("resultado").innerHTML = mensagem;
-
+        resDiv.innerHTML = mensagem;
+        resDiv.style.opacity = "1";
+    }, 200);
 }

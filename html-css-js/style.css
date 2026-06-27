@@ -1,61 +1,145 @@
-/* Fundo da página */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    color: #ffffff; /* texto branco padrão */
+    background: #020205; /* Preto azulado profundo */
+    font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
+    perspective: 1200px;
 }
 
-/* Container destacado */
+/* Fundo com Grade Neon Azul */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%; height: 200%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: rotateX(70deg) translateY(-10%);
+    animation: moveGrid 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveGrid { 
+    from { background-position: 0 0; } 
+    to { background-position: 0 600px; } 
+}
+
+/* Painel de Vidro 3D */
 .container {
-    background-color: #1e1e1e;
-    padding: 30px;
-    border-radius: 15px;
+    background: rgba(10, 15, 30, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 255, 255, 0.1);
+    width: 380px;
     text-align: center;
-    width: 300px;
-
-    /* Destaque */
-    border: 1px solid #2f2f2f;
-
-    /* sombra externa (profundidade) */
-    box-shadow:
-        0 10px 25px rgba(247, 0, 0, 0.7),
-        0 0 20px rgba(224, 5, 5, 0.4);
-
-    /* leve brilho interno */
-    backdrop-filter: blur(4px);
+    transform: rotateY(-15deg) rotateX(10deg);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Título */
+.container:hover {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.05);
+    border-color: #00ffff;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+}
+
 h1 {
-    color: #ffffff;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* Tabela */
-table {
+label { color: #8899aa; display: block; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+
+input {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 12px;
+    color: #fff;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    transition: 0.3s;
 }
 
-/* Células */
-td {
-    padding: 10px;
-    font-size: 18px;
-    color: #ffffff; /* números e texto branco */
-    border-bottom: 1px solid #333;
+input:focus { 
+    border-color: #ff00ff; /* Rosa choque no foco */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
 }
 
-/* Resultado */
-.resultado {
-    font-size: 20px;
+button {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    font-family: 'Orbitron', sans-serif;
     font-weight: bold;
-    color: #ffffff;
-    margin-top: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 12px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
 }
+
+button:hover {
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 30px #00ffff;
+}
+
+/* Lista de Resultados */
+#resultadodatabuada {
+    margin-top: 25px;
+    max-height: 250px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #00ffff transparent;
+}
+
+.tabuada-linha {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    border-left: 3px solid #ff00ff; /* Detalhe em rosa */
+    animation: fadeInSlide 0.4s ease forwards;
+}
+
+.tabuada-linha span { 
+    color: #00ffff; 
+    font-weight: bold; 
+    text-shadow: 0 0 5px #00ffff;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar Customizada */
+#resultadodatabuada::-webkit-scrollbar { width: 4px; }
+#resultadodatabuada::-webkit-scrollbar-thumb { background: #00ffff; border-radius: 10px; }
